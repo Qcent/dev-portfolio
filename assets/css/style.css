@@ -1,0 +1,88 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+a{text-decoration: none;}
+/* HEADER and Nav Styling */
+header , header ul{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+header{         /* Set background color and padding around hedder text */
+    background-color: #2e313e;
+    padding: 5px 0;
+}
+header h1{
+    background-color: aqua;
+    color: #2e313e;
+    padding-left: 4vw;     /* padding extends the blue background on text */
+    padding-right: 1.5vw;   /* using screen width scaling for fun */
+}
+nav ul{
+    margin-right:4vw;  /* nav buffer from right edge */
+    list-style-type: none;  /* no bullet point */
+    padding-top: 1vw;   /* keep the nav from hitting the top */
+}
+nav li{
+    display:inline;     /* keeps them on the same line */
+}
+nav li a{
+    padding-left: 6px;
+    padding-right: 6px;
+    margin: .5vw;
+    color:aqua;
+    border-bottom: 3px solid;
+}
+/*   END OF HEADER AND NAV  */
+
+
+/* Hero Style Start */
+.hero {
+    display: flex;
+    justify-content: flex-end;
+    background-image: url("../images/hero-bg.jpg");
+    height:200px;
+    background-size: cover;
+    background-position:center;
+  }
+  .hero-text{
+    background-color: aqua;
+    color: #2e313e;
+    font-size: 36px;
+    
+    padding:5px 6px;
+    margin:0 6vw 12px 0;
+    align-self: flex-end;
+  }
+  /* Hero Style End */
+
+  /* Section Styling */
+  main {
+      display:flex;
+      flex-direction: column;      
+  }
+  main section{
+      display:flex;
+      flex-wrap: nowrap;
+  }
+  .section-title{
+      width:20%;
+      margin-top:3vw;
+      padding-right: 1vw;
+      text-align: right;
+      border-right: 3px solid;
+      color: #0c263a;
+  }
+.section-content{
+    width:80%;
+    margin-top:3vw;
+    padding: 0 2vw;
+    color: #0c263a;
+    font-weight: 100;
+}
+  /* END OF SECTION Styling */
