@@ -2,13 +2,12 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', sans-serif ;
+    text-decoration: none;
 }
-body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
-a{text-decoration: none;}
+
 /* HEADER and Nav Styling */
-header , header ul{
+header , nav ul{
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -26,7 +25,9 @@ header h1{
 nav ul{
     margin-right:4vw;  /* nav buffer from right edge */
     list-style-type: none;  /* no bullet point */
-    padding-top: 1vw;   /* keep the nav from hitting the top */
+    height: 100%;   /* use all the space available for flex positioning */
+    align-content: flex-end;    /* position nav at bottom right of header */
+    padding-bottom: 5px;
 }
 nav li{
     display:inline;     /* keeps them on the same line */
@@ -86,3 +87,30 @@ nav li a{
     font-weight: 100;
 }
   /* END OF SECTION Styling */
+
+  /* WORK / PROJECTS Section */
+
+    /* TO DO  
+
+  /* END of WORK / PROJECTS */
+
+/* CONTACT ME Styling */
+
+.contact-links ul{
+    height: 100%; 
+    display:flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.contact-links li{
+    display: inline;
+}
+.contact-links li a{
+    color: #2e313e;
+    padding:  0 6px;
+    border-bottom: 3px solid #0c263a;
+}
+
+/* END OF CONTACT ME Styling */
