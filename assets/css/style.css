@@ -1,3 +1,4 @@
+/* Set some default style rules */
 *{
     margin:0;
     padding:0;
@@ -5,6 +6,15 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', sans-serif ;
     text-decoration: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+/* Define custom properties for site colors */
+:root{
+    --dark-text: rgb(43, 46, 53);
+    --light-text: rgb(135, 197, 198);
+    --norm-text: rgb(60,78,107);
+}
+/* END OF COLORS */
 
 /* HEADER and Nav Styling */
 header , nav ul{
@@ -13,13 +23,13 @@ header , nav ul{
     flex-wrap: wrap;
 }
 header{         /* Set background color and padding around hedder text */
-    background-color: rgb(43, 46, 53);
-    padding: 5px 0;
+    background-color: var(--dark-text);
+    padding: 5px 0;         /* padded out vertically from h1 */
 }
 header h1{
-    background-color: rgb(135, 197, 198);
-    color: rgb(43, 46, 53);
-    padding-left: 4vw;     /* padding extends the blue background on text */
+    background-color: var(--light-text);
+    color: var(--dark-text) ;
+    padding-left: 4vw;      /* padding extends the blue background on text */
     padding-right: 1.5vw;   /* using screen width scaling for fun */
     font-size: 50px;
 }
@@ -36,7 +46,7 @@ nav ul{
 }
 nav li a{
     font-size: 24px;
-    color: rgb(135, 197, 198);
+    color: var(--light-text);
     margin: .5vw;   /* spacing between links */
     padding: 0 6px;  /* these two line styles the thick underline */
     border-bottom: 3px solid;
@@ -48,14 +58,14 @@ nav li a{
     display: flex;
     justify-content: flex-end;
     background-image: url("../images/hero-bg.jpg"); 
-    /* Image taken from Wallpaper Flare.com (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
+    /* Image taken from WallpaperFlare.com (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
     height:200px;
     background-size: cover;
     background-position:center;
   }
-  .hero-text{
-    background-color: rgb(135, 197, 198);
-    color: rgb(43, 46, 53);
+  .hero-text{ 
+    background-color: var(--light-text);
+    color: var(--dark-text);
     font-size: 36px;
     padding:5px 6px;        /* extends background-color a little */
     align-self: flex-end;   /* send to bottom right of hero */ 
@@ -76,7 +86,7 @@ nav li a{
       flex-wrap: nowrap;
   }
   .section-title, .section-content{
-    color: rgb(60,78,107);    /* Color of text and borders in the main section */
+    color: var(--norm-text);    /* Color of text and borders in the main section */
     margin-top:25px;           /* vertical spacing between sections */
   }
   .section-title{ 
@@ -96,25 +106,57 @@ nav li a{
   /* END OF SECTION Styling */
 
   /* WORK / PROJECTS Section */
-
-    /* TO-DO  
-
+    #work-section{
+        display:flex;
+        flex-wrap: wrap;        /* wrap and space project cards */
+        justify-content: space-evenly;
+        width: 100%;            /* take up all available space */
+    }
+    .project{
+        display: inline-flex;   /* lets divs share a line */
+        flex-direction: column; /* set up project card as column */
+        justify-content: flex-end; /* position name tag at bottom of column */
+        height: 200px;         /* height of project card */
+        width: 47.5%;          /* enough room for 2 side by side */
+        border: 5px solid var(--light-text);
+        margin: 8px 6px;       /* sets gaps between projects */
+    }
+    .project div {
+        color: var(--dark-text);
+        background-color: var(--light-text);
+        width:fit-content;     /* set the width to just what the content requires */
+        padding: 1vw;          /* extend colored background */
+        margin-bottom: 1.7vw;  /* keeps the title flag up from the bottom border */
+    }
+    .project div h3 {
+        font-size: 26px;
+        padding-bottom: .7vw;  /* seperate the heading from the <p>*/
+    }
+    .project div p {
+        font-family: 'Lato', sans-serif;  /* imported thin google font */
+        font-size: 18px;
+    }
+        /* make first project more prominent */
+        #work-section .project:first-child {   
+            width: 97%;         /* this keeps same width as the 2 projects below */
+            height: 400px;      /* double the height of other projects */
+        }   
   /* END of WORK / PROJECTS */
 
 /* CONTACT ME Styling */
 .contact-links ul{
     display:flex;
+    flex-wrap: wrap;
     justify-content: space-around;  /* nice padding around everything */
     align-content: space-around;    /* centered vertically */
-    flex-wrap: wrap;
     list-style-type: none;          /* no bullet points */
     height: 100%;                   /* use all the space so we can be centered vertically */
 }
 .contact-links li a{
     font-size: 22px;
-    color: #000;  
+    color: var(--dark-text);  
     padding:  0 6px;               /* these 2 lines create the underline look */
-    border-bottom: 4px solid rgb(60,78,107);
+    border-bottom: 4px solid var(--norm-text);
 }
 /* END OF CONTACT ME Styling */
 
@@ -133,7 +175,16 @@ nav li a{
     }
     .section-title{
         font-size: 28px;
-        min-width: 170px;
+        min-width: 170px; /* down from 200px */
+    }
+    .project {
+        width: 47.3%;  /* scale down width to prevent early wrapping */
+    }
+    .project div h3 {
+        font-size: 24px;
+    }
+    .project div p {
+        font-size: 16px;
     }
     .contact-links li a{
         font-size: 18px;
@@ -156,6 +207,25 @@ nav li a{
         font-size: 22px;
         min-width: 150px; /* section titles even smaller */
     }
+    .section-title, .section-content{
+        margin-top:15px;           /* shrink spacing between sections */
+      }
+    #work-section {
+        flex-direction: column; /* switch to a column layout for projects*/
+    }
+    .project {
+        width:100%;          /* project should take up 100% of column */
+        margin-top: 3px;     /* tighen up top margin to bring projects closer together */
+    }
+    #work-section .project:first-child { 
+        width:100%;         /* prominent project needs 100% width now */
+    }  
+    .project div h3 {
+        font-size: 20px;
+    }
+    .project div p {
+        font-size: 14px;
+    }
     .contact-links li a{
         font-size: 16px;
     }
@@ -166,13 +236,20 @@ nav li a{
     main section {
         flex-direction: column; /* switch to column layout in sections */
     }
+    .section-title, .section-content{
+        margin-top:8px;           /* shrink spacing between sections */
+      }
     .section-title{         /* style the title slightly different for column */
-        border-right: 0;
-        border-bottom: 4px solid;
-        margin-left: 80px;
+        border-right: 0;    /* right border disappears */
+        border-bottom: 4px solid;  /* border moves to bottom */
+        margin-left: 80px;         /* next two lines give an asymmetric underline */ 
         padding-right: 36px;
-    }
+    } 
     .section-title br{
         display: none;      /* remove line breaks in titles */
+    }
+    .contact-links li{      /* improve link spacing on small screens */
+        margin: 0 6px;      
+        padding-bottom: 10px;
     }
 }
