@@ -114,20 +114,20 @@ nav li a{
         justify-content: space-between; /* keeps project card against edges of container */
     }
     .project{
-        display: inline-flex;   /* lets divs share a line */
+        display: inline-flex;   /* lets project cards share a line */
         flex-direction: column; /* set up project card as column */
         justify-content: flex-end; /* position name tag at bottom of column */
         height: 200px;         /* height of project card */
         width: 49%;          /* enough room for 2 side by side (why not %50?) */
         border: 5px solid var(--light-text);
-        margin: 7px 0;       /* sets gaps between projects */
+        margin: 7px 0;       /* sets gaps between projects space-between takes care of the rest */
     }
     .project .name-tag {
         color: var(--dark-text);
         background-color: var(--light-text);
         width:fit-content;     /* set the width to just what the content requires */
         padding: 1vw;          /* extend colored background */
-        margin-bottom: 1.7vw;  /* keeps the title flag up from the bottom border */
+        margin-bottom: 1.7vw;  /* keeps the name-tag up from the bottom border */
     }
     .project .name-tag h3 {
         font-size: 26px;
@@ -142,6 +142,28 @@ nav li a{
             width: 100%;         /* takes a column all to itself */
             height: 400px;      /* double the height of other projects */
         }   
+
+    /* CSS for project card effects and background images */
+    .project{
+        background-size: cover;
+        background-position: center;
+    }
+    #project-3dphoto {
+        background-image: url('./../images/project-3dphoto.png');
+    }
+    #project-poker {
+        background-image: url('https://s.abcnews.com/images/Technology/GTY_texas_holdem_kab_150109_16x9_992.jpg');
+    }
+    #project-onepalm {
+        background-image: url('https://img.wallpapersafari.com/desktop/1440/900/89/5/WvAKhm.jpg');
+    }
+    #project-run-buddy {
+        background-image: url('./../images/project-run-buddy.png');
+    }
+    #project-horiseon {
+        background-image: url('https://qcent.github.io/horiseon/assets/images/digital-marketing-meeting.jpg');
+    }
+    /* END OF PROJECT BACKGROUNDS */
   /* END of WORK / PROJECTS */
 
 /* CONTACT ME Styling */
@@ -167,13 +189,13 @@ nav li a{
 }                                   
 /* END OF MESSING AROUND */
 
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+/* MEDIA QUERY FOR LARGE SCREENS */
 @media screen and (min-width: 2000px) {
     /* this will be applied on any screen larger than 2000px */
-      /* some vw based element scaling starts to break when we hit this size */
+      /* some vw based element scaling starts to break design when we hit this size */
       .project .name-tag {
         padding: 22px;          /* extend colored background */
-        margin-bottom: 34px;  /* keeps the title flag up from the bottom border */
+        margin-bottom: 34px;  /* keeps the name-tag up from the bottom border */
     }
     .project .name-tag h3 {
         padding-bottom: 13px;  /*  lock in seperation of the 2 elements in name-tag */
@@ -255,8 +277,11 @@ nav li a{
     .section-title br{
         display: none;      /* remove line breaks in titles */
     }
+    #work-section .project:first-child {   
+        height: 65vw;      /* stay larger then other projects for as long as possible */
+        min-height: 200px; /* dont get smaller then any other project */
+    }  
     .contact-links li{      /* improve link spacing on small screens */
-        margin: 0 6px;      
-        padding-bottom: 10px;
+        margin: 9px 6px;      
     }
 }
