@@ -1,3 +1,6 @@
+/* load a nice thin font from an online google repository */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
 /* Set some default style rules */
 *{
     margin:0;
@@ -6,7 +9,6 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', sans-serif ;
     text-decoration: none;
 }
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 
 /* Define custom properties for site colors */
 :root{
@@ -100,7 +102,7 @@ nav li a{
   }
 .section-content{ 
     flex: 0 0 75%;          /*  do not grow or shrink and idealy be 75% */
-    padding: 0 15px;        /* padding on left and right of content */
+    padding: 0 2vw;        /* padding on left and right of content */
     font-weight: 100;       /* make this text as thin as possible */
 }
   /* END OF SECTION Styling */
@@ -108,37 +110,36 @@ nav li a{
   /* WORK / PROJECTS Section */
     #work-section{
         display:flex;
-        flex-wrap: wrap;        /* wrap and space project cards */
-        justify-content: space-evenly;
-        width: 100%;            /* take up all available space */
+        flex-wrap: wrap;        /* wrap project cards to new lines */
+        justify-content: space-between; /* keeps project card against edges of container */
     }
     .project{
         display: inline-flex;   /* lets divs share a line */
         flex-direction: column; /* set up project card as column */
         justify-content: flex-end; /* position name tag at bottom of column */
         height: 200px;         /* height of project card */
-        width: 47.5%;          /* enough room for 2 side by side */
+        width: 49%;          /* enough room for 2 side by side (why not %50?) */
         border: 5px solid var(--light-text);
-        margin: 8px 6px;       /* sets gaps between projects */
+        margin: 7px 0;       /* sets gaps between projects */
     }
-    .project div {
+    .project .name-tag {
         color: var(--dark-text);
         background-color: var(--light-text);
         width:fit-content;     /* set the width to just what the content requires */
         padding: 1vw;          /* extend colored background */
         margin-bottom: 1.7vw;  /* keeps the title flag up from the bottom border */
     }
-    .project div h3 {
+    .project .name-tag h3 {
         font-size: 26px;
-        padding-bottom: .7vw;  /* seperate the heading from the <p>*/
+        padding-bottom: .7vw;  /* scaled seperation of the 2 elements in name-tag */
     }
-    .project div p {
+    .project .name-tag p {
         font-family: 'Lato', sans-serif;  /* imported thin google font */
         font-size: 18px;
     }
         /* make first project more prominent */
         #work-section .project:first-child {   
-            width: 97%;         /* this keeps same width as the 2 projects below */
+            width: 100%;         /* takes a column all to itself */
             height: 400px;      /* double the height of other projects */
         }   
   /* END of WORK / PROJECTS */
@@ -167,6 +168,18 @@ nav li a{
 /* END OF MESSING AROUND */
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (min-width: 2000px) {
+    /* this will be applied on any screen larger than 2000px */
+      /* some vw based element scaling starts to break when we hit this size */
+      .project .name-tag {
+        padding: 22px;          /* extend colored background */
+        margin-bottom: 34px;  /* keeps the title flag up from the bottom border */
+    }
+    .project .name-tag h3 {
+        padding-bottom: 13px;  /*  lock in seperation of the 2 elements in name-tag */
+    }
+}
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
     /* this will be applied on any screen smaller than 980px */
       /* scale down fonts sizes and make section titles slightly smaller */
@@ -177,13 +190,10 @@ nav li a{
         font-size: 28px;
         min-width: 170px; /* down from 200px */
     }
-    .project {
-        width: 47.3%;  /* scale down width to prevent early wrapping */
-    }
-    .project div h3 {
+    .project .name-tag h3 {
         font-size: 24px;
     }
-    .project div p {
+    .project .name-tag p {
         font-size: 16px;
     }
     .contact-links li a{
@@ -214,16 +224,13 @@ nav li a{
         flex-direction: column; /* switch to a column layout for projects*/
     }
     .project {
-        width:100%;          /* project should take up 100% of column */
+        width:100%;          /* all projects should take up 100% of column */
         margin-top: 3px;     /* tighen up top margin to bring projects closer together */
     }
-    #work-section .project:first-child { 
-        width:100%;         /* prominent project needs 100% width now */
-    }  
-    .project div h3 {
+    .project .name-tag h3 {
         font-size: 20px;
     }
-    .project div p {
+    .project .name-tag p {
         font-size: 14px;
     }
     .contact-links li a{
