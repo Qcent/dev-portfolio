@@ -15,8 +15,10 @@
 
 /* Define custom properties for site colors */
 
+
+/* site colors */
+
 :root {
-    /* site colors */
     --dark-text: rgb(43, 46, 53);
     --light-text: rgb(135, 197, 198);
     --norm-text: rgb(60, 78, 107);
@@ -30,56 +32,58 @@
 
 header,
 nav ul {
-    display: flex;
     /* using flex box for all positioning */
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
+
+/* Set background color and padding around hedder text */
+
 header {
-    /* Set background color and padding around hedder text */
     background-color: var(--dark-text);
-    padding: 5px 0;
     /* padded out vertically from h1 */
+    padding: 5px 0;
 }
 
 header h1 {
     background-color: var(--light-text);
     color: var(--dark-text);
-    padding-left: 4vw;
     /* padding extends the blue background on text */
-    padding-right: 1.5vw;
+    padding-left: 4.5vw;
     /* using screen width scaling for fun */
+    padding-right: 1.7vw;
     font-size: 50px;
 }
 
 nav {
-    margin-left: auto;
     /* keep pushed to right edge even if flex-wrapped to new line */
+    margin-left: auto;
 }
 
 nav ul {
-    padding-top: 2vw;
     /* padding for when sitting under h1 */
-    margin-right: 4vw;
+    padding-top: 2vw;
     /* nav buffer from right edge */
-    list-style-type: none;
+    margin-right: 4vw;
     /* no bullet point */
-    height: 100%;
+    list-style-type: none;
     /* use all the space available for flex positioning */
-    align-content: flex-end;
+    height: 100%;
     /* position nav at bottom right of header */
-    padding-bottom: 5px;
+    align-content: flex-end;
     /* lifts up from absolute bottom */
+    padding-bottom: 5px;
 }
 
 nav li a {
     font-size: 24px;
     color: var(--light-text);
-    margin: .5vw;
     /* spacing between links */
+    margin: .5vw;
+    /* these two lines style the thick underline */
     padding: 0 6px;
-    /* these two line styles the thick underline */
     border-bottom: 3px solid;
 }
 
@@ -92,45 +96,49 @@ nav li a {
 .hero {
     display: flex;
     justify-content: flex-end;
-    background-image: url("../images/hero-bg.jpg");
     /* Image taken from WallpaperFlare.com (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
-    height: 200px;
+    background-image: url("../images/hero-bg.jpg");
     /* fixed height of hero */
-    background-size: cover;
+    height: 200px;
     /* fill entire hero container */
-    background-position: center;
+    background-size: cover;
     /* keep center of image in center of div */
+    background-position: center;
     position: relative;
     top: 0;
-    z-index: -2;
     /* needed to position .headshot */
+    z-index: -2;
 }
 
 .hero-text {
     background-color: var(--light-text);
     color: var(--dark-text);
     font-size: 36px;
-    padding: 5px 6px;
     /* extends background-color a little */
-    align-self: flex-end;
+    padding: 5px 6px;
     /* send to bottom right of hero */
-    margin: 0 6vw 12px 0;
+    align-self: flex-end;
     /* 6vw from right edge, 12 pixles from bottom of hero image*/
+    margin: 0 6vw 12px 0;
 }
 
 .head-shot {
+    /* absolute positioning to keep out of flex flow */
     position: absolute;
     left: 3vw;
     top: 5px;
+    /* create a circular vignette */
     border: 5px solid var(--light-text);
     width: 250px;
     height: 250px;
     border-radius: 125px;
+    /* */
     background-image: url('./../images/head-shot.jpg');
-    background-size: cover;
     /* fill entire container */
-    background-position: top;
+    background-size: cover;
     /* position top of image at top of div */
+    background-position: top;
+    /* places head-shot behind section and .hero-text */
     z-index: -1;
 }
 
@@ -148,8 +156,8 @@ main section {
 
 main {
     flex-direction: column;
-    margin-bottom: 2vw;
     /* keeps content off bottom edge of screen */
+    margin-bottom: 2vw;
 }
 
 main section {
@@ -158,43 +166,43 @@ main section {
 
 .section-title,
 .section-content {
-    color: var(--norm-text);
     /* Color of text and borders in the main section */
-    margin-top: 25px;
+    color: var(--norm-text);
     /* vertical spacing between sections */
+    margin-top: 25px;
 }
 
 .section-title {
     font-size: 35px;
     text-align: right;
-    flex: 0 2 24%;
     /* do not grow, shrink 2x? ideally 24% */
-    min-width: 200px;
+    flex: 0 2 24%;
     /* dont shrink too small and break title */
-    max-width: 300px;
+    min-width: 200px;
     /* dont get too big either */
-    padding-right: 1vw;
+    max-width: 300px;
     /* small gap before side border */
-    border-right: 4px solid;
+    padding-right: 1vw;
     /* side border */
+    border-right: 4px solid;
 }
 
 .section-title h2 {
-    /* cool effect to keep the section titles  */
+    /* cool effect to keep the section titles  
+     in view when vewing in landscape on phone */
     position: sticky;
-    /* in view when vewing in landscape on phone */
     position: -webkit-sticky;
-    top: 25px;
     /* keeps 25px from top of screen but constrained in div */
+    top: 25px;
 }
 
 .section-content {
-    flex: 0 0 75%;
     /*  do not grow or shrink and idealy be 75% */
-    padding: 0 2vw;
+    flex: 0 0 75%;
     /* padding on left and right of content */
-    font-weight: 100;
+    padding: 0 2vw;
     /* make this text as thin as possible */
+    font-weight: 100;
 }
 
 
@@ -205,55 +213,55 @@ main section {
 
 #work-section {
     display: flex;
-    flex-wrap: wrap;
     /* wrap project cards to new lines */
-    justify-content: space-between;
+    flex-wrap: wrap;
     /* keeps project card against edges of container */
+    justify-content: space-between;
 }
 
 .project {
-    display: inline-flex;
     /* lets project cards share a line */
-    flex-direction: column;
+    display: inline-flex;
     /* set up project card as column */
-    justify-content: flex-end;
+    flex-direction: column;
     /* position name tag at bottom of column */
-    height: 200px;
+    justify-content: flex-end;
     /* height of project card */
-    width: 49%;
+    height: 200px;
     /* enough room for 2 side by side (why not %50?) */
+    width: 49%;
     border: 5px solid var(--light-text);
-    margin: 7px 0;
     /* sets gaps between projects space-between takes care of the rest */
-    background-size: cover;
+    margin: 7px 0;
     /* set background-image to cover entire div */
-    background-position: center;
+    background-size: cover;
     /* center of image on center of div */
+    background-position: center;
     position: relative;
-    top: 0;
     /* need this position for the :hover effect */
+    top: 0;
 }
 
 .project .name-tag {
     color: var(--dark-text);
     background-color: var(--light-text);
-    width: fit-content;
     /* set the width to just what the content requires */
-    padding: 1vw;
+    width: fit-content;
     /* extend colored background */
-    margin-bottom: 1.7vw;
+    padding: 1vw;
     /* keeps the name-tag up from the bottom border */
+    margin-bottom: 1.7vw;
 }
 
 .project .name-tag h3 {
     font-size: 26px;
-    padding-bottom: .7vw;
     /* scaled seperation of the 2 elements in name-tag */
+    padding-bottom: .7vw;
 }
 
 .project .name-tag p {
-    font-family: 'Lato', sans-serif;
     /* imported thin google font */
+    font-family: 'Lato', sans-serif;
     font-size: 16px;
 }
 
@@ -261,43 +269,43 @@ main section {
 /* make first project more prominent */
 
 #work-section .project:first-child {
-    width: 100%;
     /* takes a column all to itself */
-    height: 400px;
+    width: 100%;
     /* double the height of other projects */
+    height: 400px;
 }
 
 
 /* Project :hover effects */
 
 .overlay-effect {
+    /* positioned overtop of its parent .project */
     position: absolute;
     top: 0;
-    /* positioned overtop of its parent .project */
     height: 100%;
-    width: 100%;
     /* use all available space */
-    background-color: var(--norm-text);
+    width: 100%;
     /* obscure project image with this color */
-    opacity: .35;
+    background-color: var(--norm-text);
     /* make the overlay mostly transparent */
-    transition: .75s ease;
+    opacity: .35;
     /* ease in value changes over 3/4 of a second */
-    transition-delay: .15s;
+    transition: .75s ease;
     /* when dropping out of :hover delay style transition */
+    transition-delay: .15s;
 }
 
 .project:hover .overlay-effect {
+    /* no delay to style transition entering :hover state */
+    transition-delay: 0s;
+    /* fade out the overlay while changing its color to yellow */
     opacity: 0;
     background-color: yellow;
-    /* fade out the overlay while changing its color to yellow */
-    transition-delay: 0s;
-    /* no delay to style transition entering :hover state */
 }
 
 .name-tag {
-    z-index: 2;
     /* keep the name tag in front of the overlay */
+    z-index: 2;
 }
 
 
@@ -338,21 +346,21 @@ main section {
 .contact-links ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     /* nice padding around everything */
-    align-content: space-around;
+    justify-content: space-around;
     /* centered vertically */
-    list-style-type: none;
+    align-content: space-around;
     /* no bullet points */
-    height: 100%;
+    list-style-type: none;
     /* use all the space so we can be centered vertically */
+    height: 100%;
 }
 
 .contact-links li a {
     font-size: 22px;
     color: var(--dark-text);
-    padding: 0 6px;
     /* these 2 lines create the underline look */
+    padding: 0 6px;
     border-bottom: 4px solid var(--norm-text);
 }
 
@@ -363,9 +371,9 @@ main section {
 /* MESSING AROUND  */
 
 .contact-links li:nth-child(2) {
-    /* put the 2nd child in contact links "Cave Wall" last in list */
-    order: 1;
+    /* put the 2nd child in contact links "Cave Wall" last in list 
     /* default order value is 0 */
+    order: 1;
 }
 
 
@@ -378,14 +386,14 @@ main section {
     /* this will be applied on any screen larger than 2000px */
     /* some vw based element scaling starts to break design when we hit this size */
     .project .name-tag {
-        padding: 22px;
         /* extend colored background */
-        margin-bottom: 34px;
+        padding: 22px;
         /* keeps the name-tag up from the bottom border */
+        margin-bottom: 34px;
     }
     .project .name-tag h3 {
-        padding-bottom: 13px;
         /*  lock in seperation of the 2 elements in name-tag */
+        padding-bottom: 13px;
     }
 }
 
@@ -398,10 +406,15 @@ main section {
     nav li a {
         font-size: 22px;
     }
+    .head-shot {
+        width: 225px;
+        /* shrink the head-shot */
+        height: 225px;
+    }
     .section-title {
         font-size: 28px;
-        min-width: 170px;
         /* down from 200px */
+        min-width: 170px;
     }
     .project .name-tag h3 {
         font-size: 24px;
@@ -424,35 +437,35 @@ main section {
         font-size: 40px;
     }
     nav ul {
-        margin-right: 2vw;
         /* nav buffer from right edge a littel smaller */
+        margin-right: 2vw;
     }
     nav li a {
         font-size: 18px;
     }
     .section-title {
+        /* section titles even smaller */
         font-size: 22px;
         min-width: 130px;
-        /* section titles even smaller */
     }
     .section-title,
     .section-content {
-        margin-top: 15px;
         /* shrink spacing between sections */
+        margin-top: 15px;
     }
     .section-content {
-        font-weight: 300;
         /* thicken up the font for small screens */
+        font-weight: 300;
     }
     #work-section {
-        flex-direction: column;
         /* switch to a column layout for projects*/
+        flex-direction: column;
     }
     .project {
-        width: 100%;
         /* all projects should take up 100% of column */
-        margin-top: 3px;
+        width: 100%;
         /* tighten up top margin to bring projects closer together */
+        margin-top: 3px;
     }
     .project .name-tag h3 {
         font-size: 20px;
@@ -471,36 +484,49 @@ main section {
 @media screen and (max-width: 620px) {
     /* this will be applied on any screen smaller than 620px */
     main section {
-        flex-direction: column;
         /* switch to column layout in sections */
+        flex-direction: column;
     }
     .section-title,
     .section-content {
-        margin-top: 8px;
         /* shrink spacing between sections */
+        margin-top: 8px;
     }
+    /* style the title slightly different for column */
     .section-title {
-        /* style the title slightly different for column */
-        border-right: 0;
         /* right border disappears */
-        border-bottom: 4px solid;
+        border-right: 0;
         /* border moves to bottom */
-        margin-left: 80px;
+        border-bottom: 4px solid;
         /* next two lines give an asymmetric underline */
+        margin-left: 80px;
         padding-right: 36px;
     }
     .section-title br {
-        display: none;
         /* remove line breaks in titles */
+        display: none;
     }
     #work-section .project:first-child {
-        height: 65vw;
         /* stay larger then other projects for as long as possible */
-        min-height: 200px;
+        height: 65vw;
         /* dont get smaller then any other project */
+        min-height: 200px;
     }
+    /* improve link spacing on small screens */
     .contact-links li {
-        /* improve link spacing on small screens */
         margin: 9px 6px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    /* this will be applied on any screen smaller than 450px */
+    .head-shot {
+        /* shrink headshot and position up on screen */
+        top: -5px;
+        width: 215px;
+        height: 215px;
+    }
+    .hero-text {
+        font-size: 22px;
     }
 }
