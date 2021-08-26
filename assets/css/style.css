@@ -189,6 +189,9 @@ main section {
     /* next two lines set up shadows on text and border */
     text-shadow: 2px 3px 6px rgba(43, 46, 53, .55);
     box-shadow: 8px 0 6px -7px var(--norm-text);
+    /* these next two lines add a nice thin outline on titles */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(126, 126, 126, .8);
 }
 
 .section-title h2 {
