@@ -16,13 +16,14 @@
 /* Define custom properties for site colors */
 
 :root {
+    /* site colors */
     --dark-text: rgb(43, 46, 53);
     --light-text: rgb(135, 197, 198);
     --norm-text: rgb(60, 78, 107);
 }
 
 
-/* END OF COLORS */
+/* END OF COUSTOM PROPERTIES */
 
 
 /* HEADER and Nav Styling */
@@ -94,8 +95,15 @@ nav li a {
     background-image: url("../images/hero-bg.jpg");
     /* Image taken from WallpaperFlare.com (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
     height: 200px;
+    /* fixed height of hero */
     background-size: cover;
+    /* fill entire hero container */
     background-position: center;
+    /* keep center of image in center of div */
+    position: relative;
+    top: 0;
+    z-index: -2;
+    /* needed to position .headshot */
 }
 
 .hero-text {
@@ -108,6 +116,22 @@ nav li a {
     /* send to bottom right of hero */
     margin: 0 6vw 12px 0;
     /* 6vw from right edge, 12 pixles from bottom of hero image*/
+}
+
+.head-shot {
+    position: absolute;
+    left: 3vw;
+    top: 5px;
+    border: 5px solid var(--light-text);
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+    background-image: url('./../images/head-shot.jpg');
+    background-size: cover;
+    /* fill entire container */
+    background-position: top;
+    /* position top of image at top of div */
+    z-index: -1;
 }
 
 
@@ -125,6 +149,7 @@ main section {
 main {
     flex-direction: column;
     margin-bottom: 2vw;
+    /* keeps content off bottom edge of screen */
 }
 
 main section {
@@ -159,8 +184,8 @@ main section {
     position: sticky;
     /* in view when vewing in landscape on phone */
     position: -webkit-sticky;
-    top: 0;
-    /* keeps at top of screen but constrained in div */
+    top: 25px;
+    /* keeps 25px from top of screen but constrained in div */
 }
 
 .section-content {
@@ -252,18 +277,22 @@ main section {
     height: 100%;
     width: 100%;
     /* use all available space */
-    background-color: var(--light-text);
+    background-color: var(--norm-text);
     /* obscure project image with this color */
-    opacity: .2;
-    /* use only 20% opacity */
+    opacity: .35;
+    /* make the overlay mostly transparent */
     transition: .75s ease;
     /* ease in value changes over 3/4 of a second */
+    transition-delay: .15s;
+    /* when dropping out of :hover delay style transition */
 }
 
 .project:hover .overlay-effect {
     opacity: 0;
     background-color: yellow;
     /* fade out the overlay while changing its color to yellow */
+    transition-delay: 0s;
+    /* no delay to style transition entering :hover state */
 }
 
 .name-tag {
@@ -402,9 +431,8 @@ main section {
         font-size: 18px;
     }
     .section-title {
-        flex: 0 2 15%;
         font-size: 22px;
-        min-width: 120px;
+        min-width: 130px;
         /* section titles even smaller */
     }
     .section-title,
@@ -424,7 +452,7 @@ main section {
         width: 100%;
         /* all projects should take up 100% of column */
         margin-top: 3px;
-        /* tighen up top margin to bring projects closer together */
+        /* tighten up top margin to bring projects closer together */
     }
     .project .name-tag h3 {
         font-size: 20px;
