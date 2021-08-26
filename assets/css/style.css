@@ -140,6 +140,7 @@ nav li a {
     background-position: top;
     /* places head-shot behind section and .hero-text */
     z-index: -1;
+    box-shadow: 0 4px 8px 3px var(--dark-text);
 }
 
 
@@ -185,6 +186,9 @@ main section {
     padding-right: 1vw;
     /* side border */
     border-right: 4px solid;
+    /* next two lines set up shadows on text and border */
+    text-shadow: 2px 3px 6px rgba(43, 46, 53, .55);
+    box-shadow: 8px 0 6px -7px var(--norm-text);
 }
 
 .section-title h2 {
@@ -240,6 +244,7 @@ main section {
     position: relative;
     /* need this position for the :hover effect */
     top: 0;
+    box-shadow: 6px 6px 6px -2px var(--dark-text);
 }
 
 .project .name-tag {
@@ -501,6 +506,8 @@ main section {
         /* next two lines give an asymmetric underline */
         margin-left: 80px;
         padding-right: 36px;
+        /* change box shadow for new column layout */
+        box-shadow: 0 8px 6px -6px var(--dark-text);
     }
     .section-title br {
         /* remove line breaks in titles */
