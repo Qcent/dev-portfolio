@@ -370,6 +370,17 @@ main section {
     /* these 2 lines create the underline look */
     padding: 0 6px;
     border-bottom: 4px solid var(--norm-text);
+    /* next three lines set default state of hover effect */
+    transition: .3s;
+    position: relative;
+    top: 0;
+}
+
+.contact-links a:hover {
+    /* raises text up 2px and drops a nice shadow */
+    top: -2px;
+    padding-bottom: 2px;
+    box-shadow: 0 12px 6px -5px var(--dark-text);
 }
 
 
