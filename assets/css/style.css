@@ -88,6 +88,60 @@ nav li a {
 }
 
 
+/* nav effects */
+
+nav ul li {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    position: relative;
+}
+
+nav ul li:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 93%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: var(--norm-text);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+nav ul li:hover:before,
+nav ul li:active:before {
+    -webkit-transform: scaleX(.9);
+    transform: scaleX(.9);
+}
+
+nav ul li:hover,
+nav ul li:active {
+    -webkit-transform: scale(1.06) rotate(.5deg);
+    transform: scale(1.06) rotate(.5deg);
+}
+
+nav ul li:hover:nth-child(even),
+nav ul li:active:nth-child(even) {
+    -webkit-transform: scale(1.06) rotate(-.5deg);
+    transform: scale(1.06) rotate(-.5deg);
+}
+
+
+/* end of nav effects */
+
+
 /*   END OF HEADER AND NAV  */
 
 
@@ -380,7 +434,7 @@ main section {
     /* raises text up 2px and drops a nice shadow */
     top: -2px;
     padding-bottom: 2px;
-    box-shadow: 0 12px 6px -5px var(--dark-text);
+    box-shadow: 0 12px 5px -5px rgba(43, 46, 53, .8);
 }
 
 
