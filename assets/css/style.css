@@ -376,7 +376,7 @@ main section {
     top: 0;
 }
 
-.contact-links a:hover {
+.contact-links li a:hover {
     /* raises text up 2px and drops a nice shadow */
     top: -2px;
     padding-bottom: 2px;
