@@ -292,21 +292,14 @@
         margin: 0 6vw 12px 0;
         /* places over head-shot */
         z-index: 15;
+        position: relative;
     }
-    /* text effect */
+    /* ROCKIN TEXT EFFECT */
     
     .rockin-effect {
         display: inline-block;
-        -webkit-transition-property: all;
-        transition-property: all;
-        transition-delay: 0s;
-        -webkit-transition-duration: 0.1s;
-        transition-duration: 0.1s;
-    }
-    
-    .hero-text:hover .xrockin-effect.reverse {
-        -webkit-transform: scale(1.3) rotate(2deg);
-        transform: scale(1.3) rotate(2deg);
+        animation: 3.8s infinite;
+        animation-timing-function: ease-out;
     }
     
     .hero-text:hover .rockin-effect.two {
@@ -323,13 +316,49 @@
         -webkit-animation-delay: .62s;
         animation-delay: .62s;
     }
-    /* ANIMATION NOT TRANSFORMATION */
     
-    .rockin-effect {
+    #rock-on {
+        opacity: 0;
         animation: 3.8s infinite;
         animation-timing-function: ease-out;
+        position: absolute;
+        top: -0.8em;
+        left: 1.9em;
         display: inline-block;
+        background-image: url("./../images/rock-emoji.png");
+        background-position: center;
+        background-size: 3em 2.5em;
+        width: 3em;
+        height: 2.5em;
     }
+    
+    .hero-text:hover #rock-on {
+        animation-name: rockin-fist-ani;
+    }
+    
+    @keyframes rockin-fist-ani {
+        from {
+            transform: rotate(-10deg) scale(.1);
+        }
+        12% {
+            opacity: .1;
+        }
+        28% {
+            opacity: .95;
+            transform: rotate(36deg) scale(1.4);
+        }
+        30% {
+            opacity: .2;
+            transform: rotate(0deg) scale(1);
+        }
+        50% {
+            opacity: 0;
+        }
+        to {
+            transform: rotate(0deg) scale(1);
+        }
+    }
+    /* ANIMATION NOT TRANSFORMATION */
     
     .hero-text:hover .rockin-effect {
         animation-name: rockin-ani;
@@ -360,8 +389,9 @@
         }
     }
     /* END OF ROCKIN' ANIMATION */
-    /*  */
+    /* END of ROCKIN' EFFECT */
     /* Hero Style End */
+    /* */
     /* Section Styling */
     
     main,
@@ -665,6 +695,10 @@
         .section-content {
             /* shrink spacing between sections */
             margin-top: 15px;
+        }
+        .section-title h2 {
+            /* drop spacing from row layout */
+            padding-bottom: 0;
         }
         .section-content {
             /* thicken up the font for small screens */
