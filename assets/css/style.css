@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;
 }
 
@@ -56,6 +56,78 @@ header h1 {
     padding-right: 1.7vw;
     font-size: 50px;
 }
+
+
+/* Visual Effect for Header */
+
+.spinner-effect {
+    /* why not try and spice things up with the power of css animation*/
+    /* set some  animation properties*/
+    animation: 4s infinite;
+    display: inline-block;
+}
+
+.spinner-effect.delay {
+    animation-delay: .7s;
+}
+
+h2:hover .spinner-effect,
+h1:hover .spinner-effect {
+    animation-name: spin-text;
+}
+
+h2:hover .spinner-effect.reverse,
+h1:hover .spinner-effect.reverse {
+    animation-name: spin-text-cc;
+}
+
+@keyframes spin-text {
+    0% {
+        color: var(--dark-text);
+        transform: rotate(0deg);
+    }
+    12% {
+        color: var(--norm-text);
+    }
+    22% {
+        color: var(--light-text);
+    }
+    33% {
+        color: var(--dark-text);
+        transform: rotate(360deg);
+    }
+    100% {
+        color: var(--norm-text);
+        transform: rotate(360deg);
+    }
+}
+
+
+/* counter-clockwise */
+
+@keyframes spin-text-cc {
+    0% {
+        color: var(--dark-text);
+        transform: rotate(0deg);
+    }
+    12% {
+        color: var(--norm-text);
+    }
+    22% {
+        color: var(--light-text);
+    }
+    33% {
+        color: var(--dark-text);
+        transform: rotate(-360deg);
+    }
+    100% {
+        color: var(--norm-text);
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* END of HEADER Effects */
 
 nav {
     /* keep pushed to right edge even if flex-wrapped to new line */
