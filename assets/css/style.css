@@ -9,6 +9,8 @@
         box-sizing: border-box;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         text-decoration: none;
+        /* prevents ugly and undesireable highlighting */
+        user-select: none;
     }
     
     body {
@@ -18,6 +20,8 @@
     p {
         /* spacing based on text size */
         margin-bottom: 1em;
+        /* only paragraph text can be selected and copied */
+        user-select: text;
     }
     /* Define custom properties for site colors */
     /* site colors */
@@ -199,11 +203,12 @@
         content: "";
         position: absolute;
         z-index: -1;
-        top: 93%;
+        top: 88%;
         left: 0;
         right: 0;
         bottom: 0;
-        height: 5px;
+        height: 10px;
+        border-radius: 20%;
         background: var(--norm-text);
         -webkit-transform: scaleX(0);
         transform: scaleX(0);
