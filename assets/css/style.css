@@ -12,6 +12,22 @@
         /* prevents ugly and undesireable highlighting */
         user-select: none;
     }
+    /* utility classes */
+    
+    .love {
+        position: relative;
+        top: 0;
+    }
+    
+    .love:hover::after {
+        opacity: .6;
+        position: absolute;
+        top: -.2em;
+        right: 0.85em;
+        content: "❤️";
+        transform: scale(2);
+    }
+    /* */
     
     body {
         background-color: #eaeae9;
@@ -192,14 +208,17 @@
     /* nav effects */
     
     nav ul li {
+        /* sets the duration and type of transiton */
         -webkit-transition-duration: 0.2s;
         transition-duration: 0.2s;
         -webkit-transition-property: transform;
         transition-property: transform;
+        /* for positioning the underline effect */
         position: relative;
     }
     
     nav ul li:before {
+        /*  this will produce a growing underline effect on :hover */
         content: "";
         position: absolute;
         z-index: -1;
@@ -222,18 +241,21 @@
     
     nav ul li:hover:before,
     nav ul li:active:before {
-        -webkit-transform: scaleX(.9);
-        transform: scaleX(.9);
+        /* starts underline animation */
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
     }
     
     nav ul li:hover,
     nav ul li:active {
+        /* starts a scale and tilt animation */
         -webkit-transform: scale(1.06) rotate(.5deg);
         transform: scale(1.06) rotate(.5deg);
     }
     
     nav ul li:hover:nth-child(even),
     nav ul li:active:nth-child(even) {
+        /* make every other element tilt counter clockwise */
         -webkit-transform: scale(1.06) rotate(-.5deg);
         transform: scale(1.06) rotate(-.5deg);
     }
@@ -297,10 +319,12 @@
     /* ROCKIN TEXT EFFECT */
     
     .rockin-effect {
+        /* for animating some text and an image */
         display: inline-block;
         animation: 3.8s infinite;
         animation-timing-function: ease-out;
     }
+    /* DELAYS for different parts of animation */
     
     .hero-text:hover .rockin-effect.two {
         -webkit-animation-delay: .17s;
@@ -316,8 +340,10 @@
         -webkit-animation-delay: .62s;
         animation-delay: .62s;
     }
+    /* END of DELAYS */
     
     #rock-on {
+        /* set up a hidden rock fist! to be animated */
         opacity: 0;
         animation: 3.8s infinite;
         animation-timing-function: ease-out;
@@ -333,6 +359,7 @@
     }
     
     .hero-text:hover #rock-on {
+        /* on hover start the fist animation */
         animation-name: rockin-fist-ani;
     }
     
@@ -358,9 +385,9 @@
             transform: rotate(0deg) scale(1);
         }
     }
-    /* ANIMATION NOT TRANSFORMATION */
     
     .hero-text:hover .rockin-effect {
+        /* start the text animation */
         animation-name: rockin-ani;
     }
     
@@ -388,7 +415,6 @@
             transform: rotate(360deg);
         }
     }
-    /* END OF ROCKIN' ANIMATION */
     /* END of ROCKIN' EFFECT */
     /* Hero Style End */
     /* */
@@ -416,7 +442,7 @@
         color: var(--norm-text);
         /* vertical spacing between sections */
         margin-top: 25px;
-        /* places over top of head shot */
+        /* places over top of head shot if needed*/
         z-index: 20;
     }
     
@@ -480,7 +506,7 @@
         justify-content: flex-end;
         /* height of project card */
         height: 200px;
-        /* enough room for 2 side by side (why not %50?) */
+        /* enough room for 2 side by side with room for a little gap*/
         width: 49%;
         border: 5px solid var(--light-text);
         /* sets gaps between projects space-between takes care of the rest */
@@ -498,7 +524,9 @@
     .project .name-tag {
         color: var(--dark-text);
         background-color: var(--light-text);
-        /* set the width to just what the content requires */
+        /* set the width to just what the content requires
+        now also on firefox */
+        width: -moz-fit-content;
         width: fit-content;
         /* extend colored background */
         padding: 1vw;
@@ -525,7 +553,7 @@
         /* double the height of other projects */
         height: 400px;
     }
-    /* Project :hover effects */
+    /* VFX .project :hover effect */
     
     .overlay-effect {
         /* positioned overtop of its parent .project */
@@ -556,7 +584,7 @@
         /* keep the name tag in front of the overlay */
         z-index: 2;
     }
-    /* END OF :HOVER EFFECT */
+    /* END OF .project :HOVER EFFECT */
     /* Project Background images */
     
     #project-3dphoto {
