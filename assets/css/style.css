@@ -12,6 +12,15 @@
     text-decoration: none;
 }
 
+body {
+    background-color: #eaeae9;
+}
+
+p {
+    /* spacing based on text size */
+    margin-bottom: 1em;
+}
+
 
 /* Define custom properties for site colors */
 
@@ -72,7 +81,8 @@ header h1 {
 }
 
 h2:hover .spinner-effect,
-h1:hover .spinner-effect {
+h1:hover .spinner-effect,
+.hero-text:hover .spinner-effect {
     animation-name: spin-text;
 }
 
@@ -135,8 +145,6 @@ nav {
 }
 
 nav ul {
-    /* padding for when sitting under h1 */
-    padding-top: 2vw;
     /* nav buffer from right edge */
     margin-right: 4vw;
     /* no bullet point */
@@ -222,7 +230,8 @@ nav ul li:active:nth-child(even) {
 .hero {
     display: flex;
     justify-content: flex-end;
-    /* Image taken from WallpaperFlare.com (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
+    /* Image taken from WallpaperFlare.com 
+    (https://www.wallpaperflare.com/two-blue-crystals-blue-and-purple-constellation-poster-plexus-wallpaper-ub) */
     background-image: url("../images/hero-bg.jpg");
     /* fixed height of hero */
     height: 200px;
@@ -233,7 +242,28 @@ nav ul li:active:nth-child(even) {
     position: relative;
     top: 0;
     /* needed to position .headshot */
-    z-index: -2;
+}
+
+.head-shot {
+    /* absolute positioning to keep out of flex flow */
+    position: absolute;
+    left: 3vw;
+    top: 5px;
+    /* create a circular vignette */
+    border: 5px solid var(--light-text);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    /* */
+    background-image: url('./../images/head-shot.jpg');
+    /* fill entire container */
+    background-size: cover;
+    /* position top of image at top of div */
+    background-position: top;
+    /* places head-shot behind section and .hero-text */
+    z-index: 10;
+    /* add a shadow */
+    box-shadow: 0 4px 8px 3px var(--dark-text);
 }
 
 .hero-text {
@@ -246,28 +276,56 @@ nav ul li:active:nth-child(even) {
     align-self: flex-end;
     /* 6vw from right edge, 12 pixles from bottom of hero image*/
     margin: 0 6vw 12px 0;
+    /* places over head-shot */
+    z-index: 15;
 }
 
-.head-shot {
-    /* absolute positioning to keep out of flex flow */
-    position: absolute;
-    left: 3vw;
-    top: 5px;
-    /* create a circular vignette */
-    border: 5px solid var(--light-text);
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
-    /* */
-    background-image: url('./../images/head-shot.jpg');
-    /* fill entire container */
-    background-size: cover;
-    /* position top of image at top of div */
-    background-position: top;
-    /* places head-shot behind section and .hero-text */
-    z-index: -1;
-    box-shadow: 0 4px 8px 3px var(--dark-text);
+
+/* text effect */
+
+.rockin-effect {
+    display: inline-block;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    transition-delay: 0s;
 }
+
+.hero-text:hover .rockin-effect {
+    color: rebeccapurple;
+    -webkit-transform: scale(1.3) rotate(-2deg);
+    transform: scale(1.3) rotate(-2deg);
+}
+
+.hero-text:hover .rockin-effect.spinner-effect {
+    animation-name: none;
+    -webkit-transform: scale(1.3) rotate(180deg);
+    transform: scale(1.3) rotate(180deg);
+}
+
+.hero-text:hover .rockin-effect.reverse {
+    -webkit-transform: scale(1.3) rotate(2deg);
+    transform: scale(1.3) rotate(2deg);
+}
+
+.hero-text:hover .rockin-effect.two {
+    transition-delay: .17s;
+}
+
+.hero-text:hover .rockin-effect.three {
+    transition-delay: .36s;
+}
+
+.hero-text:hover .rockin-effect.four {
+    transition-delay: .60s;
+}
+
+
+/*  */
 
 
 /* Hero Style End */
@@ -297,6 +355,8 @@ main section {
     color: var(--norm-text);
     /* vertical spacing between sections */
     margin-top: 25px;
+    /* places over top of head shot */
+    z-index: 20;
 }
 
 .section-title {
@@ -327,6 +387,8 @@ main section {
     position: -webkit-sticky;
     /* keeps 25px from top of screen but constrained in div */
     top: 25px;
+    /* keep the title from hitting absolute bottom */
+    padding-bottom: 25px;
 }
 
 .section-content {
@@ -588,6 +650,11 @@ main section {
     nav li a {
         font-size: 18px;
     }
+    .head-shot {
+        width: 215px;
+        /* shrink the head-shot */
+        height: 215px;
+    }
     .section-title {
         /* section titles even smaller */
         font-size: 22px;
@@ -628,6 +695,10 @@ main section {
 
 @media screen and (max-width: 620px) {
     /* this will be applied on any screen smaller than 620px */
+    nav ul {
+        /* padding for when sitting under h1 */
+        padding-top: 2vw;
+    }
     main section {
         /* switch to column layout in sections */
         flex-direction: column;
@@ -675,5 +746,12 @@ main section {
     }
     .hero-text {
         font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 345px) and (min-width:256px) {
+    /* this will be applied on screens between 345px and 256px */
+    header nav ul {
+        justify-content: space-around;
     }
 }
