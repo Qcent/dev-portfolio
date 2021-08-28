@@ -1,12 +1,10 @@
-* {
-    /* border: 3px solid black;  */
+body {
+    display: flex;
+    justify-content: center;
 }
 
-body {
-    width: 950px;
-    margin: 0 auto;
-    position: relative;
-}
+
+/* use some pseudo class to add background with transparency for fun */
 
 body::after {
     z-index: -1;
@@ -22,6 +20,12 @@ body::after {
     background-attachment: fixed;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
 }
 
 header {
@@ -53,27 +57,29 @@ footer {
 
 footer a {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
     text-decoration: none;
     color: #000;
 }
 
-footer a>* {
-    margin-left: auto;
-}
-
 footer h3 {
+    text-align: right;
     font-size: 32px;
     margin: 5px 0 5px 0;
 }
 
 footer p {
     align-self: flex-end;
+    justify-self: right;
     font-size: 12px;
+    margin: 0;
 }
 
 @media screen and (max-width:768px) {
     section {
         margin-left: 5vw;
+    }
+    footer h3 {
+        font-size: 28px
     }
 }
