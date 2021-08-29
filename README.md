@@ -19,7 +19,7 @@ open https://qcent.github.io/dev-portfolio/
 ...or alternatively... \
 Click this link https://qcent.github.io/dev-portfolio/ \
 Once here:
-![](assets/images/app-screenchot.png)
+![looks like a really nice web page, should read well too.](./assets/images/app-screenshot.png)
 move the mouse click around and read some things.
 
 ## Contributing
