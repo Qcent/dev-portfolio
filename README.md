@@ -25,7 +25,8 @@ Once here:
 move the mouse click around and read some things.
 
 ## Contributing
-Pull requests are totally welcome. For major changes, please open an issue first to discuss what you would like to change. \  \* _Hint_ \* Only things that make me look good will be approved.
+Pull requests are totally welcome. For major changes, please open an issue first to discuss what you would like to change. \
+\* _Hint_ \* Only things that make me look good will be approved.
 
 But please, please make sure to test as appropriate. I worked really hard on this, and you don't want to go and mess it up... Do You?
 
