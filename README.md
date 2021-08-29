@@ -30,6 +30,8 @@ Pull requests are totally welcome. For major changes, please open an issue first
 
 But please, please make sure to test as appropriate. I worked really hard on this, and you don't want to go and mess it up... Do You?
 
+... and you better comment on every new line of CSS too!
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
