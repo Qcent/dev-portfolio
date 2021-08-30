@@ -302,6 +302,45 @@
         box-shadow: 0 4px 8px 3px var(--dark-text);
     }
     
+    .hero:hover {
+        /* effect time */
+        background-blend-mode: hard-light;
+        animation: hue-rotate 4s linear infinite;
+    }
+    
+    .hero:hover .head-shot,
+    .hero:hover .hero-text {
+        /* effect time */
+        background-blend-mode: hard-light;
+        animation: hue-rotate 4s linear infinite reverse;
+    }
+    
+    @keyframes hue-rotate {
+        0% {
+            -webkit-filter: hue-rotate(0);
+            -moz-filter: hue-rotate(0);
+            -ms-filter: hue-rotate(0);
+            filter: hue-rotate(0)
+        }
+        to {
+            -webkit-filter: hue-rotate(1turn);
+            -moz-filter: hue-rotate(1turn);
+            -ms-filter: hue-rotate(1turn);
+            filter: hue-rotate(1turn)
+        }
+    }
+    
+    .head-shot:active {
+        background-image: url('./../images/head-shot-drawn.png');
+        /* fill entire container */
+        background-size: 68%;
+        background-repeat: no-repeat;
+        /* position top of image at top of div */
+        background-position-y: 3px;
+        background-position-x: 19px;
+    }
+    /****************************/
+    
     .hero-text {
         background-color: var(--light-text);
         color: var(--dark-text);
