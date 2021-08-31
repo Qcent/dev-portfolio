@@ -102,6 +102,8 @@
     h1:hover .spinner-effect.spin-3d {
         animation-name: spin-3d;
     }
+    /****************************/
+    /* ANIMATION FRAMES         */
     
     @keyframes spin-text {
         0% {
@@ -176,6 +178,7 @@
             transform: rotateY(-360deg);
         }
     }
+    /****************************/
     /* END of HEADER Effects */
     
     nav {
@@ -305,15 +308,26 @@
     .hero:hover {
         /* effect time */
         background-blend-mode: hard-light;
-        animation: hue-rotate 4s linear infinite;
+        animation: hue-rotate 10s linear infinite;
     }
     
     .hero:hover .head-shot,
     .hero:hover .hero-text {
-        /* effect time */
+        /* must run the effect in reverse to cancel it out for these elements*/
         background-blend-mode: hard-light;
-        animation: hue-rotate 4s linear infinite reverse;
+        animation: hue-rotate 10s linear infinite reverse;
     }
+    
+    .head-shot:active {
+        /* load up a radial gradient and a url image */
+        background-image: radial-gradient(circle, rgb(185 171 182) 0%, rgb(239 0 0) 100%), url(./../images/head-shot-drawn.png);
+        /* fill entire container */
+        background-size: 100%;
+        /* now animate a color shift and overide css specificity on the :hover rule */
+        animation: hue-rotate 9s linear infinite !important;
+    }
+    /****************************/
+    /* ANIMATION FRAMES         */
     
     @keyframes hue-rotate {
         0% {
@@ -329,17 +343,7 @@
             filter: hue-rotate(1turn)
         }
     }
-    
-    .head-shot:active {
-        background-image: url('./../images/head-shot-drawn.png');
-        /* fill entire container */
-        background-size: 68%;
-        background-repeat: no-repeat;
-        /* position top of image at top of div */
-        background-position-y: 3px;
-        background-position-x: 19px;
-    }
-    /****************************/
+    /*******************************/
     
     .hero-text {
         background-color: var(--light-text);
@@ -402,6 +406,13 @@
         animation-name: rockin-fist-ani;
     }
     
+    .hero-text:hover .rockin-effect {
+        /* start the text animation */
+        animation-name: rockin-ani;
+    }
+    /****************************/
+    /* ANIMATION FRAMES         */
+    
     @keyframes rockin-fist-ani {
         from {
             transform: rotate(-10deg) scale(.1);
@@ -423,11 +434,6 @@
         to {
             transform: rotate(0deg) scale(1);
         }
-    }
-    
-    .hero-text:hover .rockin-effect {
-        /* start the text animation */
-        animation-name: rockin-ani;
     }
     
     @keyframes rockin-ani {
@@ -454,6 +460,7 @@
             transform: rotate(360deg);
         }
     }
+    /****************************/
     /* END of ROCKIN' EFFECT */
     /* Hero Style End */
     /* */
@@ -765,6 +772,7 @@
             margin-top: 15px;
         }
         .section-title h2 {
+            font-size: 38px;
             /* drop spacing from row layout */
             padding-bottom: 0;
         }
