@@ -768,6 +768,10 @@
                 -webkit-text-stroke-width: 1px;
                 -webkit-text-stroke-color: var(--dark-text);
             }
+            main {
+                /* get rid of light mode bottom margin */
+                margin-bottom: 0;
+            }
             main section {
                 /* more padding between sections that scales with screeen width */
                 padding-top: 4vw;
