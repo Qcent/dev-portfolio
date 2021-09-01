@@ -3,7 +3,7 @@
 This is a [Web Page](https://en.wikipedia.org/wiki/Web_page) to showcase my development portfolio, comprised of class projects and more personal ones. And one day, perhaps, even a professional project.
 
 ## Project Objectives
-Meet all challenge criteria and Mock-Up objectives while relying on advanced CSS to accomplish site design and styling. I will also utilize media queries, flex-box and scaling elements to maintain a consistent look on all screen sizes.
+Meet all challenge criteria and Mock-Up objectives while relying on advanced CSS to accomplish site design and styling. I will also utilize media queries, flex-box and scaling elements to maintain a consistent look on all screen sizes. Support for Dark Mode will also be included with some more personal styling choices different from the mock-up.
 
 Going against better practices, I will include many CSS animations and transitions to breathe some life and excitement into an otherwise perfectly fine looking website.
 
