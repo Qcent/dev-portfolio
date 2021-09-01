@@ -547,8 +547,12 @@
         /* needed to position git-links */
         position: relative;
         top: 0;
+        /* height of project card */
+        height: 200px;
         /* sets gaps between projects space-between takes care of the rest */
         margin: 7px 0;
+        /* enough room for 2 side by side with room for a little gap*/
+        width: 49%;
     }
     
     .project {
@@ -558,10 +562,10 @@
         flex-direction: column;
         /* position name tag at bottom of column */
         justify-content: flex-end;
-        /* height of project card */
-        height: 200px;
-        /* enough room for 2 side by side with room for a little gap*/
-        width: 49%;
+        /* take up all the wrapper */
+        width: 100%;
+        height: 100%;
+        /* a nice light blue border */
         border: 5px solid var(--light-text);
         /* set background-image to cover entire div */
         background-size: cover;
@@ -601,23 +605,58 @@
     }
     
     .project~.git-link {
-        z-index: 20;
+        /*  place on top of everyting else in project card*/
+        z-index: 3;
+        /* positions in bottom right corner of the project card */
         position: absolute;
-        bottom: 9px;
+        bottom: 10px;
         right: 8px;
-        padding: 1px;
+        /* initially invisible untill :hover */
+        opacity: 0;
     }
     
     .git-link a {
+        /*  what the link text looks like */
         background-color: var(--dark-text);
-        color: var(--light-text);
+        color: var(--norm-text);
         font-size: 20px;
-        padding: 3px;
+        padding: 4px;
+        transition: all .75s ease;
+        /* lets add some graphics */
+        background-image: url('./../images/GitHub-Mark-Light-64px.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
     }
-    /* make first project more prominent */
     
-    #work-section .project-wrapper .project:first-child,
+    .git-link,
+    .project:hover~.git-link a,
+    .git-link:hover a {
+        /* theses elements will have same transition properties  */
+        transition: all .75s ease;
+    }
+    
+    .project:hover~.git-link,
+    .git-link:hover {
+        /* when project card is :hover make visible */
+        opacity: 1;
+        /*  position up from pre :hover state  */
+        bottom: 20px;
+    }
+    
+    .project:hover~.git-link a,
+    .git-link:hover a {
+        /* on grow the link box */
+        padding: 16px 4px 16px 4px;
+    }
+    
+    .git-link:hover a {
+        /* on git-link:hover change text color */
+        color: var(--light-text);
+    }
+    
     #work-section .project-wrapper:first-child {
+        /* make first project more prominent */
         /* takes a column all to itself */
         width: 100%;
         /* double the height of other projects */
@@ -803,7 +842,7 @@
             /* switch to a column layout for projects*/
             flex-direction: column;
         }
-        .project {
+        .project-wrapper {
             /* all projects should take up 100% of column */
             width: 100%;
             /* tighten up top margin to bring projects closer together */
@@ -814,6 +853,15 @@
         }
         .project .name-tag p {
             font-size: 14px;
+        }
+        .project~.git-link {
+            /* on a mobile screen make the .git-link always there */
+            bottom: 20px;
+            opacity: 1;
+        }
+        .git-link a {
+            /* on a mobile screen make the .git-link always there */
+            padding: 16px 4px 16px 4px;
         }
         .contact-links li a {
             font-size: 16px;
@@ -855,7 +903,7 @@
             /* remove line breaks in titles */
             display: none;
         }
-        #work-section .project:first-child {
+        #work-section .project-wrapper:first-child {
             /* stay larger then other projects for as long as possible */
             height: 65vw;
             /* dont get smaller then any other project */
