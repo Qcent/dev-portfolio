@@ -663,6 +663,12 @@
             /* double the height of other projects */
             height: 400px;
         }
+        
+        #work-section .project-wrapper:last-child:nth-child(2n) {
+            /* make last project, if it is an even numbered child, the full width */
+            /* take a column all to itself */
+            width: 100%;
+        }
         /* VFX .project :hover effect */
         
         .overlay-effect {
@@ -702,6 +708,10 @@
         
         #project-onepalm {
             background-image: url('./../images/project-onepalm.png');
+        }
+        
+        #project-robot-gladiators {
+            background-image: url('./../images/project-robot-gladiators.jpg');
         }
         
         #project-run-buddy {
