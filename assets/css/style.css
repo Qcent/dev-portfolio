@@ -710,17 +710,18 @@
             background-image: url('./../images/project-onepalm.png');
         }
         
-        #project-jspassword { /*  royalty free image       */
+        #project-jspassword {
+            /*  royalty free image       */
             background-image: url('https://static8.depositphotos.com/1005669/1005/i/600/depositphotos_10052436-stock-photo-cyber-security.jpg');
         }
-
+        
         #project-robot-gladiators {
-        /* image taken shamelesly from this web article */
-     /* https://www.spot.ph/newsfeatures/the-latest-news-features/62906/giant-robot-fight-more-things-you-might-have-missed-today */
+            /* image taken shamelesly from this web article */
+            /* https://www.spot.ph/newsfeatures/the-latest-news-features/62906/giant-robot-fight-more-things-you-might-have-missed-today */
             background-image: url('./../images/project-robot-gladiators.jpg');
         }
         
-        #project-run-buddy { 
+        #project-run-buddy {
             background-image: url('./../images/project-run-buddy.png');
         }
         
@@ -776,8 +777,38 @@
             /* MEDIA QUERY FOR DARK MODE */
             /* a reimagining of the layout in a nice darker format */
              :root {
-                /*  light-text gets dark */
-                --light-text: rgb(67, 99, 99);
+                /* new colors for a slightly darker theme
+                 /* added a new hightlight color: med-light-text */
+                --med-light-text: rgb(27, 167, 155);
+                --dark-text: rgb(33, 33, 33);
+                --light-text: rgb(20, 255, 236);
+                --norm-text: rgb(13, 115, 119);
+            }
+            header h1,
+            .hero-text,
+            .project .name-tag {
+                background-color: var(--norm-text);
+            }
+            nav li a {
+                color: var(--norm-text);
+            }
+            nav li a:hover,
+            nav li a:active {
+                border-color: var(--light-text);
+            }
+            .head-shot,
+            .project {
+                border: 5px solid var(--norm-text);
+            }
+            header h1:hover,
+            header h1:active,
+            .hero-text:hover,
+            .hero-text:active,
+            .project:hover .name-tag {
+                background-color: var(--med-light-text);
+            }
+            .project:hover {
+                border: 5px solid var(--med-light-text);
             }
             .section-title {
                 /* these next two lines add a nice thin outline on titles */
@@ -792,16 +823,16 @@
                 /* more padding between sections that scales with screeen width */
                 padding-top: 4vw;
                 padding-bottom: 4vw;
-            }
-            main section:hover {
-                /* add shadow and make it appear on top of other sections */
+                /* add some shadow between sections */
                 box-shadow: 0 8px 6px -6px var(--dark-text);
-                z-index: 1;
+                /* will need to z-index each section lower then the one on top for shadows */
             }
             main section:first-child {
+                /*  z-index: -1;
                 /*  new background for about me section */
-                background-color: burlywood;
+                background-color: rgba(0, 0, 0, .8);
                 background: radial-gradient(circle, rgba(65, 53, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+                /*
                 /* new text position */
                 text-align: right;
             }
@@ -810,14 +841,20 @@
                 margin: 0 5%;
             }
             main section:nth-child(2) {
+                /* z-index: -2; */
                 /*  new background for about work section */
-                background: rgb(15, 14, 12);
+                background: rgba(15, 14, 12, .8);
                 background: linear-gradient(200deg, rgba(15, 14, 12, 1) 0%, rgba(92, 88, 84, 1) 100%);
             }
             main section:nth-child(3) {
+                /*z-index: -3;
                 /*  new background for contact me section */
-                background: rgb(125, 115, 105);
+                background: rgba(36, 26, 24, .8);
                 background: radial-gradient(circle, rgb(110, 102, 71) 0%, rgb(59, 53, 47) 100%);
+            }
+            .contact-links li a:hover,
+            .contact-links li a:active {
+                border-color: var(--med-light-text);
             }
             @media screen and (min-width: 1024px) {
                 .head-shot {
