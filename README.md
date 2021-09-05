@@ -22,7 +22,7 @@ open https://qcent.github.io/dev-portfolio/
 Click this link https://qcent.github.io/dev-portfolio/ \
 Once here:
 ![looks like a really nice web page, should read well too.](./assets/images/app-screenshot.png)
-move the mouse click around and read some things.
+move the mouse, click around, and read some things.
 
 ## Contributing
 Pull requests are totally welcome. For major changes, please open an issue first to discuss what you would like to change. \
