@@ -1,0 +1,37 @@
+     /* Project Background images */
+     
+     #project-taskinator {
+         background-image: url('./../images/project-taskinator.png');
+     }
+     
+     #project-3dphoto {
+         background-image: url('./../images/project-3dphoto.png');
+     }
+     
+     #project-poker {
+         background-image: url('./../images/project-poker.png');
+     }
+     
+     #project-onepalm {
+         background-image: url('./../images/project-onepalm.png');
+     }
+     
+     #project-jspassword {
+         /*  royalty free image       */
+         background-image: url('https://static8.depositphotos.com/1005669/1005/i/600/depositphotos_10052436-stock-photo-cyber-security.jpg');
+     }
+     
+     #project-robot-gladiators {
+         /* image taken shamelesly from this web article */
+         /* https://www.spot.ph/newsfeatures/the-latest-news-features/62906/giant-robot-fight-more-things-you-might-have-missed-today */
+         background-image: url('./../images/project-robot-gladiators.jpg');
+     }
+     
+     #project-run-buddy {
+         background-image: url('./../images/project-run-buddy.png');
+     }
+     
+     #project-horiseon {
+         background-image: url('https://qcent.github.io/horiseon/assets/images/digital-marketing-meeting.jpg');
+     }
+     /* END OF PROJECT BACKGROUNDS */
