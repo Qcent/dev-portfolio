@@ -16,6 +16,11 @@
          background-image: url('./../images/project-onepalm.png');
      }
      
+     #project-jsquiz {
+         /*  royalty free image       */
+         background-image: url('https://github.com/Qcent/js-quiz-app/raw/main/assets/images/app-screenshot1.png');
+     }
+     
      #project-jspassword {
          /*  royalty free image       */
          background-image: url('https://static8.depositphotos.com/1005669/1005/i/600/depositphotos_10052436-stock-photo-cyber-security.jpg');
