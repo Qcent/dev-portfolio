@@ -8,6 +8,10 @@
          background-image: url('./../images/project-3dphoto.png');
      }
      
+     #project-weather-forecast {
+         background-image: url('./../images/project-weather-forecast.png');
+     }
+     
      #project-poker {
          background-image: url('./../images/project-poker.png');
      }
@@ -27,9 +31,7 @@
      }
      
      #project-robot-gladiators {
-         /* image taken shamelesly from this web article */
-         /* https://www.spot.ph/newsfeatures/the-latest-news-features/62906/giant-robot-fight-more-things-you-might-have-missed-today */
-         background-image: url('./../images/project-robot-gladiators.jpg');
+         background-image: url('./../images/project-robot-gladiators.png');
      }
      
      #project-run-buddy {
