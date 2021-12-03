@@ -1,5 +1,9 @@
      /* Project Background images */
      
+     #project-poseidons-trunk {
+         background-image: url('./../images/project-poseidons-trunk.png');
+     }
+     
      #project-taskinator {
          background-image: url('./../images/project-taskinator.png');
      }
